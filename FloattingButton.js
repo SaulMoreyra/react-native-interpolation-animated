@@ -1,5 +1,5 @@
 import { AntDesign, Entypo } from "@expo/vector-icons";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import {
   Animated,
   StyleSheet,

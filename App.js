@@ -1,14 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
-import CoffetiButton from "./CoffetiButton";
+import { StyleSheet, View } from "react-native";
+import ConffetiButton from "./ConffetiButton";
 import FloattingButton from "./FloattingButton";
 import RotationButton from "./RotationButton";
+import TextFade from "./TextFade";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <RotationButton style={{ left: 20, bottom: 100 }} />
-      <FloattingButton style={{ left: 80, bottom: 100 }} />
-      <CoffetiButton style={{ left: 140, bottom: 100 }} />
+      <ConffetiButton style={{ left: 40, bottom: 100 }} />
+      <RotationButton style={{ left: 140, bottom: 100 }} />
+      <FloattingButton style={{ left: 240, bottom: 100 }} />
+      <TextFade>Hola cofi joto!</TextFade>
     </View>
   );
 }

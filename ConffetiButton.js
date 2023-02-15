@@ -30,7 +30,7 @@ const ConffetiButton = (props) => {
       ...old,
       {
         id: heartCount,
-        right: getRandomNumber(50, width / 2),
+        right: getRandomNumber(100, width),
         color: getRandomColor(),
       },
     ]);
@@ -44,6 +44,15 @@ const ConffetiButton = (props) => {
 
   return (
     <>
+      <View style={[styles.containerButton, props.style]}>
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={addHeart}
+          style={[styles.button]}
+        >
+          <AntDesign name="plus" size={24} color="#fff" />
+        </TouchableOpacity>
+      </View>
       <View style={styles.container}>
         {hearts.map((heart) => (
           <HeartContainer
@@ -54,9 +63,6 @@ const ConffetiButton = (props) => {
           />
         ))}
       </View>
-      <TouchableOpacity onPress={addHeart} style={[styles.button, props.style]}>
-        <AntDesign name="plus" size={24} color="#fff" />
-      </TouchableOpacity>
     </>
   );
 };
@@ -102,7 +108,7 @@ const HeartContainer = ({ onComplete, color, ...props }) => {
       animationEndY / 2,
       animationEndY,
     ],
-    outputRange: ["0deg", "-5deg", "0deg", "5deg", "0deg"],
+    outputRange: ["0deg", "-10deg", "0deg", "10deg", "0deg"],
   });
 
   useEffect(() => {
@@ -138,8 +144,15 @@ const Heart = (props) => (
 );
 
 const styles = StyleSheet.create({
+  containerButton: {
+    alignItems: "center",
+    position: "absolute",
+  },
   container: {
-    flex: 1,
+    position: "absolute",
+    alignItems: "center",
+    width,
+    height,
   },
   button: {
     backgroundColor: "#f02a4b",
